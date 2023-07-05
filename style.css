@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#map {
+    box-shadow: rgba(255, 255, 255, 0.75) 11px 12px 60px -16px;
+    outline: none;
+    border-radius: 10px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body {
+
+    /* background-image: url('./weather-img/sfondo-meteo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background: rgb(0, 165, 255);
+    background: linear-gradient(111deg, rgba(0, 165, 255, 1) 50%, rgba(11, 0, 255, 1) 99%);
+}
+
+header {
+    background-color: #ffffff4d;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+body,
+main,
+.container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.row-meteo {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    gap: 30px;
+    display: none;
+}
+
+.card-day {
+    border-radius: 10px;
+    padding: 20px 10px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(347deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    background: transparent;
+    border: 3px solid #ffffff63;
+}
+
+.card-day img {
+    width: 50px;
+}
+
+.card {
+    border-radius: 10px;
+    padding: 20px 10px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(347deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    width: 240px;
+    flex-basis: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: white;
+    background: transparent;
+    border: 3px solid #ffffff63;
+}
+
+.search {
+    border-radius: 200px;
+    width: 70%;
+    padding: 8px 24px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.icon-search {
+    font-size: 25px;
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+.city {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.city-favorite,
+.temp-favorite {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.favorite {
+    text-align: center;
+    /* border: 1px solid rgb(0 0 0 / 20%); */
+    padding: 10px;
+    background-color: #ffffff4b;
+    border-radius: 10px;
+    color: white;
+}
+
+.preferito {
+    background-color: rgb(77, 238, 77, 0.5);
+    padding: 3px 8px;
+    border-radius: 60px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+.day {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 10px;
+    padding: 30px;
+}
+
+.img-meteo {
+    width: 100px;
+}
+
+.error {
+    display: none;
+    bottom: -25px;
+    left: 180px;
+    background: #ffffff;
+    padding: 9px 30px;
+    border-radius: 13px;
+    font-size: 20px;
+    font-weight: 500;
+    color: red;
+    box-shadow: 4px 6px 28px 7px rgba(255, 0, 0, 0.34);
+    -webkit-box-shadow: 4px 6px 28px 7px rgba(255, 0, 0, 0.34);
+    -moz-box-shadow: 4px 6px 28px 7px rgba(255, 0, 0, 0.34);
+}
