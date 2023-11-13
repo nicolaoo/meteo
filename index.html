@@ -77,17 +77,14 @@
 
                         <div id="map" class="mx-5 basis-72 sm:basis-3/5 sm:ms-5"></div>
                         <div class="card relative mx-4 sm:me-4 basis-72 sm:basis-1/4">
-                            <button class=" date preferito">
-                                <i class="fa-solid fa-plus"></i>
+                            <button class=" date">
                             </button>
                             <div class="city">
                                 <h1></h1>
-
                             </div>
 
                             <div>
-
-                                <div class="temp text-center text-4xl">
+                                <div class="temp text-center">
 
                                 </div>
                                 <div class="flex align-center justify-center gap-1 text-xs">
@@ -134,7 +131,6 @@
 
         const search = document.querySelector('.search')
         const searchBtn = document.querySelector('.fa-solid')
-        const addBtn = document.querySelector('.preferito')
         const contDay = document.querySelector('.day')
         const weatherImg = document.querySelector('.img-meteo')
 
@@ -262,62 +258,6 @@
                         }).addTo(map);
 
                         L.marker([res.data.coord.lat, res.data.coord.lon]).addTo(map);
-
-
-                        addBtn.addEventListener('click', () => {
-
-                            const existCity = favoriteCity.find(city => city.name === res.data.name)
-
-                            if (!existCity) {
-                                favoriteCity.push(res.data)
-                                localStorage.setItem('favorite', JSON.stringify(favoriteCity))
-                                const favorite = JSON.parse(localStorage.getItem('favorite'))
-
-                                while (document.querySelector('.content-fav').firstChild) {
-                                    document.querySelector('.content-fav').removeChild(document.querySelector('.content-fav').firstChild)
-                                }
-
-                                for (let i = 0; i < favorite.length; i++) {
-
-                                    const contentCity = document.createElement('div')
-                                    contentCity.classList.add('favorite')
-
-                                    const cityName = document.createElement('h3')
-                                    cityName.textContent = favorite[i].name
-                                    contentCity.appendChild(cityName)
-
-                                    const img = document.createElement('img')
-                                    if (favorite[i].weather[0].main === 'Clouds') {
-                                        img.src = './weather-img/cloudy.png'
-
-                                    } else if (favorite[i].weather[0].main === 'Clear') {
-                                        img.src = './weather-img/sunny.png'
-
-                                    } else if (favorite[i].weather[0].main === 'Rain') {
-                                        img.src = './weather-img/raining.png'
-
-                                    } else if (favorite[i].weather[0].main === 'Drizzle') {
-                                        img.src = './weather-img/rainy.png'
-
-                                    } else if (favorite[i].weather[0].main === 'Mist') {
-                                        img.src = './weather-img/mist.png'
-                                    }
-                                    contentCity.appendChild(img)
-
-                                    const temp = document.createElement('span')
-                                    temp.textContent = Math.round(favorite[i].main.temp) + '°C'
-                                    contentCity.appendChild(temp)
-
-                                    document.querySelector('.content-fav').appendChild(contentCity)
-
-
-
-
-                                    console.log(favorite)
-                                    console.log(document.querySelector('.content-fav').firstChild)
-                                }
-                            }
-                        })
 
 
                     }
