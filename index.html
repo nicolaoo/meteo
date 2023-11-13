@@ -72,6 +72,13 @@
                     <div class="day grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8">
 
                     </div>
+                    <button class="right">
+                        >
+                    </button>
+
+                    <button class="left">
+                        >>
+                    </button>
 
                     <div class="content-weather flex-wrap md:flex-nowrap flex justify-center w-full gap-4">
 
@@ -138,6 +145,38 @@
         const favoriteCity = []
         let map = null
 
+        /*
+        *
+        *   CAROSELLO
+        * 
+        */
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const day = document.querySelector('.day');
+            let counter = 0;
+
+            document.querySelector('.right').addEventListener('click', function () {
+                counter++;
+                day.style.transform = 'translateX(' + (-counter * 100) + '%)';
+            });
+
+            document.querySelector('.left').addEventListener('click', function () {
+                if (counter > 0) {
+                    counter--;
+                    day.style.transform = 'translateX(' + (-counter * 100) + '%)';
+                }
+            });
+        });
+
+
+
+        /*
+        *
+        *   CAROSELLO
+        * 
+        */
+
+
         function dayWeather(city) {
             axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=37cc86979138d53b410e900ea9c59de3&units=metric`)
                 .then(function (res) {
@@ -180,11 +219,7 @@
 
                             document.querySelector('.row-meteo').style.display = 'flex'
                             document.querySelector('.error').style.display = 'none'
-
-
                         }
-
-
 
                     }
                 })
