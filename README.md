@@ -21,6 +21,6 @@ Infine sotto si troveranno tutte le variazioni di tempo per ogni ora e giorno. I
    ```bash
    git clone https://github.com/nicolaoo/meteo.git
 
-2. Clona il repository sul tuo computer:
+2. Utilizzo:
 
     Apri la cratella e troverai diversi file. Per visualizzare il l'applicazione dovrai aprire il file `index.html`.
